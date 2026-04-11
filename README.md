@@ -155,56 +155,56 @@ ps aux | grep engine
 ### Screenshot 1 — Multi-container supervision
 Two containers (alpha, beta) running under one supervisor process.
 
-![screenshot1](screenshots/01_multicontainer.png)
+![screenshot1](01_multicontainer.png)
 
 *Caption: Two containers alpha and beta both in `running` state under a single supervisor (pid shown in Terminal 1).*
 
 ### Screenshot 2 — Metadata tracking
 Output of `./engine ps` showing all tracked container metadata.
 
-![screenshot2](screenshots/02_ps_metadata.png)
+![screenshot2](02_ps_metadata.png)
 
 *Caption: `ps` command output showing ID, HOST PID, STATE, STARTED, SOFT(MiB), HARD(MiB) for each container.*
 
 ### Screenshot 3 — Bounded-buffer logging
 Log file contents captured through the logging pipeline.
 
-![screenshot3](screenshots/03_logs.png)
+![screenshot3](03_logs.png)
 
 *Caption: `./engine logs alpha` showing output captured from the container via the pipe → bounded buffer → log file pipeline.*
 
 ### Screenshot 4 — CLI and IPC
 A CLI command being issued and the supervisor responding.
 
-![screenshot4](screenshots/04_cli_ipc.png)
+![screenshot4](04_cli_ipc.png)
 
 *Caption: `./engine stop alpha` issued in Terminal 2; supervisor in Terminal 1 responds confirming SIGTERM was sent — demonstrating the UNIX domain socket control channel.*
 
 ### Screenshot 5 — Soft-limit warning
 dmesg showing a soft-limit warning event.
 
-![screenshot5](screenshots/05_soft_limit.png)
+![screenshot5](05_soft_limit.png)
 
 *Caption: `dmesg` output showing `SOFT LIMIT container=memtest` warning from the kernel module when RSS exceeded the soft threshold.*
 
 ### Screenshot 6 — Hard-limit enforcement
 dmesg showing a container killed after exceeding hard limit.
 
-![screenshot6](screenshots/06_hard_limit.png)
+![screenshot6](06_hard_limit.png)
 
 *Caption: `dmesg` showing `HARD LIMIT container=memtest ... sending SIGKILL`; `ps` showing container state as `killed`.*
 
 ### Screenshot 7 — Scheduling experiment
 Terminal output from scheduling experiment with observable differences.
 
-![screenshot7](screenshots/07_scheduling.png)
+![screenshot7](07_scheduling.png)
 
 *Caption: `logs hipri` vs `logs lopri` — hipri container completed significantly more iterations in the same time period due to higher CFS scheduling weight (nice -5 vs nice +10).*
 
 ### Screenshot 8 — Clean teardown
 Evidence that all containers are reaped and no zombies remain.
 
-![screenshot8](screenshots/08_teardown.png)
+![screenshot8](08_teardown.png)
 
 *Caption: `dmesg` shows `Module unloaded`; all container entries removed; `ps aux | grep engine` shows no zombie processes.*
 
