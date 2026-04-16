@@ -196,7 +196,7 @@ dmesg showing container killed + ps showing killed state.
 
 ### Screenshot 7 — Scheduling experiment
 Hipri vs lopri accumulator comparison.
-
+![screenshot7.1](priority.jpeg)
 ![screenshot7](06_hard_limit.png)
 
 *Caption: `logs hipri` vs `logs lopri` — hipri completed more work due to CFS priority difference (nice -5 vs nice +10).*
