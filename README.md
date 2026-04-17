@@ -217,6 +217,8 @@ Module unloaded, no zombie processes.
 ---
 ### Screenshot — CPU-bound vs I/O-bound Comparison
 
+![screenshota](io1.jpeg)
+![screenshotb](io2.jpeg)
 
 *Caption: CPU-bound container (cpuwork) shows continuous accumulator growth, while I/O-bound container (iowork) progresses in discrete iterations, highlighting the impact of workload type on CPU utilization.*
 
