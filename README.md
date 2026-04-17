@@ -215,6 +215,10 @@ Module unloaded, no zombie processes.
 *Caption: `ps aux | grep engine` shows no zombie engine processes after full teardown.*
 
 ---
+### Screenshot — CPU-bound vs I/O-bound Comparison
+
+
+*Caption: CPU-bound container (cpuwork) shows continuous accumulator growth, while I/O-bound container (iowork) progresses in discrete iterations, highlighting the impact of workload type on CPU utilization.*
 
 ## 4. Engineering Analysis
 
